@@ -15,4 +15,4 @@
 15. Vehicle.where.not(notes: "")
 16. Vehicle.where('year < ?',2000).pluck(:vin)
 17. Vehicle.where(color: 'silver').order('year').pluck(:make, :model, :year)
-18. Vehicle.all.sum('fee').to_f
+18. Vehicle.where(is_paid: true).sum('fee').to_f
